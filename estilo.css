@@ -1,0 +1,90 @@
+:root {
+  --navy: #141226;
+  --navy-2: #24223d;
+  --blue: #005ad1;
+  --lime: #c6f21f;
+  --yellow: #ffc700;
+  --ink: #141226;
+  --ink-2: #4a4860;
+  --line: #e4e3ec;
+  --bg: #ffffff;
+  --bg-2: #f6f6f9;
+  --display: "Jost", "Futura", system-ui, sans-serif;
+  --body: "Nunito Sans", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: var(--blue); }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.texto { max-width: 720px; }
+
+/* Topo */
+.topo { background: var(--navy); color: #fff; }
+.topo .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+.marca { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 22px; }
+.marca img { width: 36px; height: 36px; border-radius: 9px; }
+.menu { display: flex; gap: 20px; }
+.menu a { color: #d8d7e6; text-decoration: none; font-weight: 600; font-size: 15px; }
+.menu a:hover, .menu a[aria-current] { color: var(--lime); }
+
+/* Capa */
+.capa { background: var(--navy); color: #fff; padding: 56px 0 72px; }
+.capa .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+.capa h1 { font-family: var(--display); font-weight: 600; font-size: 52px; line-height: 1.08; margin: 0 0 18px; letter-spacing: -0.5px; }
+.capa h1 em { font-style: normal; color: var(--lime); }
+.capa p { color: #d8d7e6; font-size: 19px; margin: 0 0 28px; }
+.capa .icone { width: 100%; max-width: 300px; justify-self: center; border-radius: 22%; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+.selo { display: inline-block; background: var(--lime); color: var(--navy); font-weight: 800; padding: 12px 22px; border-radius: 999px; text-decoration: none; }
+
+/* Recursos */
+.recursos { padding: 64px 0; }
+.recursos h2, .pagina h1 { font-family: var(--display); font-weight: 600; }
+.recursos h2 { font-size: 32px; margin: 0 0 28px; }
+.grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cartao { background: var(--bg-2); border-radius: 16px; padding: 22px; }
+.cartao h3 { font-family: var(--display); font-weight: 600; font-size: 20px; margin: 0 0 6px; }
+.cartao p { margin: 0; color: var(--ink-2); font-size: 16px; }
+.barra { width: 40px; height: 8px; border-radius: 4px; background: var(--lime); margin-bottom: 14px; }
+
+/* Páginas de texto */
+.pagina { padding: 48px 0 72px; }
+.pagina h1 { font-size: 40px; line-height: 1.15; margin: 0 0 6px; }
+.pagina h2 { font-family: var(--display); font-weight: 600; font-size: 24px; margin: 36px 0 8px; }
+.pagina h3 { font-size: 18px; margin: 24px 0 4px; }
+.data { color: var(--ink-2); margin: 0 0 28px; }
+.pagina table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0; }
+.pagina th, .pagina td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.pagina th { background: var(--bg-2); }
+.tabela { overflow-x: auto; }
+.destaque { background: var(--bg-2); border-left: 4px solid var(--lime); padding: 14px 18px; border-radius: 8px; margin: 16px 0; }
+.contato-grande { font-family: var(--display); font-size: 24px; font-weight: 600; }
+
+/* Rodapé */
+.rodape { background: var(--navy); color: #a9a7bd; font-size: 14px; padding: 28px 0; }
+.rodape .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.rodape a { color: #d8d7e6; text-decoration: none; margin-right: 16px; }
+.rodape a:hover { color: var(--lime); }
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .capa { padding: 36px 0 48px; }
+  .capa .wrap { grid-template-columns: 1fr; }
+  .capa .icone { max-width: 160px; justify-self: start; order: -1; }
+  .capa h1 { font-size: 36px; }
+  .grade { grid-template-columns: 1fr; }
+  .menu { gap: 14px; }
+  .menu a { font-size: 14px; }
+  .marca span { display: none; }
+  .pagina h1 { font-size: 30px; }
+}

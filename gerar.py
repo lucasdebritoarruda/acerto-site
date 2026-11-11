@@ -6,7 +6,7 @@ Para pôr o CNPJ nas páginas legais, preencha a constante CNPJ abaixo e rode de
 import pathlib
 import markdown
 
-CNPJ = ""  # ex.: "12.345.678/0001-90"
+CNPJ = "70.062.993/0001-01"
 ATUALIZACAO = "10 de novembro de 2026"
 EMAIL = "contato@acertoapp.com.br"
 
@@ -21,8 +21,9 @@ MENU = [("/", "Início"), ("/suporte/", "Suporte"), ("/termos/", "Termos"), ("/p
 
 
 def pagina(caminho, titulo, descricao, corpo):
+    atual = ' aria-current="page"'
     menu = "".join(
-        f'<a href="{href}"{" aria-current=\"page\"" if href == caminho else ""}>{nome}</a>'
+        f'<a href="{href}"{atual if href == caminho else ""}>{nome}</a>'
         for href, nome in MENU[1:])
     return f"""<!DOCTYPE html>
 <html lang="pt-BR">
@@ -121,9 +122,10 @@ SUPORTE = f"""<section class="pagina"><div class="wrap texto">
 
 
 def texto_legal(titulo, nome):
+    corpo = legal(nome).replace("<table>", '<div class="tabela"><table>').replace("</table>", "</table></div>")
     return (f'<section class="pagina"><div class="wrap texto">\n<h1>{titulo}</h1>\n'
             f'<p class="data">Última atualização: {ATUALIZACAO}</p>\n'
-            f'{legal(nome).replace("<table>", "<div class=\"tabela\"><table>").replace("</table>", "</table></div>")}\n'
+            f'{corpo}\n'
             f'</div></section>')
 
 
